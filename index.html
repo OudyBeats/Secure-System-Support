@@ -91,12 +91,27 @@ h3.t{font-size:23px}.sub,.svc .lead{font-size:15px;margin-bottom:20px}
 .wa{padding:11px 15px;font-size:14px}
 footer{padding-bottom:84px}
 }
+.burger{display:none}
+@media(max-width:600px){
+header .wrap{justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;background:transparent;border:1px solid #333;border-radius:10px;cursor:pointer}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:transform .2s,opacity .2s}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+header nav#menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;width:auto;background:var(--hero);border-top:1px solid #262626;box-shadow:0 12px 24px rgba(0,0,0,.35);font-size:17px}
+header nav#menu.open{display:flex}
+header nav#menu a{padding:16px 20px;border-bottom:1px solid #1c1c1c}
+header nav#menu a:last-child{border-bottom:0;color:var(--acc)}
+section{scroll-margin-top:80px}
+}
 </style>
 </head>
 <body>
 <header><div class="wrap">
 <a class="logo" href="#inicio">SSS <b>S.A.S</b><span>Secure System Support</span></a>
-<nav><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav>
+<button class="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav id="menu"><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav>
 </div></header>
 
 <div class="hero" id="inicio"><svg class="bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -179,6 +194,15 @@ go(0);
 </script>
 <script>
 document.querySelectorAll('.dt').forEach(function(d){d.open=window.innerWidth>=760});
+</script>
+<script>
+(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
+function c(){m.classList.remove('open');b.classList.remove('on');b.setAttribute('aria-expanded','false')}
+b.onclick=function(){var o=m.classList.toggle('open');b.classList.toggle('on',o);b.setAttribute('aria-expanded',o?'true':'false')};
+m.querySelectorAll('a').forEach(function(a){a.onclick=c});
+document.addEventListener('click',function(e){if(!m.contains(e.target)&&!b.contains(e.target))c()});
+window.addEventListener('resize',function(){if(window.innerWidth>600)c()});
+})();
 </script>
 </body>
 </html>
