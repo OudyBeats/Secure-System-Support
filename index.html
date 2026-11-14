@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SSS S.A.S | Secure System Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--ink:#0a0a0a;--mute:#525252;--brand:#15803d;--on:#fff;--acc:#22c55e;--hero:#0a0a0a;--line:#e5e5e5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--card:#151515;--ink:#f5f5f5;--mute:#a3a3a3;--brand:#22c55e;--on:#04140a;--acc:#4ade80;--hero:#000;--line:#262626}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--card:#151515;--ink:#f5f5f5;--mute:#a3a3a3;--brand:#22c55e;--on:#04140a;--acc:#4ade80;--hero:#000;--line:#262626}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--hero);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:14px;padding-bottom:14px}
+.logo{font-weight:800;font-size:20px;letter-spacing:.5px}.logo b{color:var(--acc)}.logo span{display:block;font-size:10px;letter-spacing:2px;font-weight:600;color:#d4d4d4;text-transform:uppercase}
+nav{display:flex;gap:20px;font-size:14px;font-weight:600}
+nav a:hover{color:var(--acc)}
+.hero{background:var(--hero);color:#fff;text-align:center;padding:84px 0 96px;position:relative}
+.hero{overflow:hidden}.hero .bg{position:absolute;inset:0;width:100%;height:100%}.hero .wrap{position:relative}
+.hero small{color:var(--acc);letter-spacing:2px;font-weight:600;text-transform:uppercase}
+.slide{display:none}.slide.on{display:block}
+.slide h2{font-size:clamp(28px,5vw,46px);margin:10px 0;line-height:1.15;font-weight:800}
+.slide p{max-width:620px;margin:0 auto 26px;color:#d4d4d4;font-size:18px}
+.btn{display:inline-block;background:var(--brand);color:var(--on);padding:12px 26px;border-radius:999px;font-weight:600}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:var(--acc);color:#04201a}
+.dots{margin-top:30px}.dots button{width:10px;height:10px;border-radius:50%;border:0;margin:0 5px;background:#404040;cursor:pointer}.dots button.on{background:var(--acc)}
+section{padding:68px 0}
+h3.t{font-size:clamp(24px,4vw,34px);margin:0 0 8px;font-weight:800}
+.sub{color:var(--mute);max-width:640px;margin:0 0 32px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h4{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--mute);font-size:15px}
+.ico{width:44px;height:44px;border-radius:10px;background:var(--brand);color:var(--on);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+.svc{border-top:1px solid var(--line)}
+.svc .lead{font-size:18px;color:var(--mute);max-width:720px;margin:0 0 24px}
+.stats{background:var(--hero);color:#fff;text-align:center}
+.stats .grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stats b{display:block;font-size:40px;color:var(--acc);font-weight:800}
+.stats span{color:#d4d4d4;font-size:14px}
+blockquote{margin:0;font-size:15px;color:var(--mute)}
+.who{margin-top:14px;font-weight:600;font-size:14px}
+.contact{text-align:center}
+.contact p{color:var(--mute)}
+.tag{color:var(--acc);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+section{scroll-margin-top:72px}
+a.card:hover{border-color:var(--brand)}
+.two{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.two h4{margin:0 0 10px;font-size:18px}
+.two ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}.two li{margin-bottom:8px}.two li b{color:var(--ink)}
+.ben{background:var(--hero);color:#fff;border-radius:14px;padding:22px;border:1px solid var(--line)}
+.ben h4{color:var(--acc)}
+.bn{display:grid;gap:10px}
+.bn p{margin:0;background:#161616;border-radius:10px;padding:12px 14px;font-size:14.5px;color:#e5e5e5}
+.bn b{color:var(--acc)}
+footer{background:var(--hero);color:#d4d4d4;text-align:center;padding:26px 20px;font-size:14px}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25d366;color:#fff;font-weight:800;border-radius:999px;padding:14px 18px;box-shadow:0 6px 18px rgba(0,0,0,.3);z-index:20}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#inicio">SSS <b>S.A.S</b><span>Secure System Support</span></a>
+<nav><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+
+<div class="hero" id="inicio"><svg class="bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><pattern id="gp" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#22c55e" stroke-opacity=".09"/></pattern>
+<radialGradient id="gr" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#22c55e" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="600" fill="url(#gp)"/><rect width="1200" height="600" fill="url(#gr)"/>
+<g stroke="#22c55e" stroke-opacity=".4" stroke-width="1.5" fill="none"><path d="M0 110H190L240 160H370"/><path d="M0 480H150L200 430H320"/><path d="M1200 130H1010L960 180H830"/><path d="M1200 490H1050L1000 440H880"/><path d="M370 160V90H520"/><path d="M830 180V100H690"/></g>
+<g fill="#4ade80" fill-opacity=".7"><circle cx="370" cy="160" r="4"/><circle cx="320" cy="430" r="4"/><circle cx="830" cy="180" r="4"/><circle cx="880" cy="440" r="4"/><circle cx="520" cy="90" r="4"/><circle cx="690" cy="100" r="4"/></g>
+<g stroke="#22c55e" stroke-opacity=".55" fill="#22c55e" fill-opacity=".07" stroke-width="1.5">
+<rect x="50" y="230" width="160" height="38" rx="6"/><rect x="50" y="276" width="160" height="38" rx="6"/><rect x="50" y="322" width="160" height="38" rx="6"/>
+<rect x="990" y="215" width="170" height="115" rx="8"/><path d="M1075 330v30M1040 360h70" fill="none"/></g>
+<g fill="#4ade80"><circle cx="68" cy="249" r="3"/><circle cx="68" cy="295" r="3"/><circle cx="68" cy="341" r="3"/></g>
+<g stroke="#4ade80" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"><path d="M90 249h100M90 295h100M90 341h100"/><path d="M1010 242h60M1010 262h120M1010 282h90M1010 302h110"/></g>
+</svg>
+<div class="wrap">
+<small>Soluciones tecnológicas inteligentes</small>
+<div class="slide on"><h2>Ciberseguridad que protege lo que más vale de tu empresa</h2><p>Blindamos sistemas, detectamos vulnerabilidades y preparamos a tu equipo para evitar fraudes y paradas costosas.</p><a class="btn" href="#s1">Conocer el servicio</a></div>
+<div class="slide"><h2>Infraestructura y soporte técnico que nunca se detienen</h2><p>Redes, servidores, copias de respaldo y soporte en sitio o remoto para que tu operación funcione siempre.</p><a class="btn" href="#s2">Conocer el servicio</a></div>
+<div class="slide"><h2>Diagnóstico integral de TI con un plan claro</h2><p>Conoce el estado real de tu tecnología, detecta riesgos a tiempo y decide dónde invertir primero.</p><a class="btn" href="#s5">Conocer el servicio</a></div>
+<div class="dots"></div>
+</div></div>
+
+<section id="nosotros"><div class="wrap">
+<h3 class="t">Nosotros</h3>
+<p class="sub">Somos un equipo de ingenieros y especialistas que acompaña a empresas en la gestión de sus sistemas de información, desde el diagnóstico hasta el soporte diario.</p>
+<div class="grid">
+<div class="card"><div class="ico">1</div><h4>Enfoque práctico</h4><p>Soluciones simples, documentadas y fáciles de operar por tu equipo.</p></div>
+<div class="card"><div class="ico">2</div><h4>Respuesta rápida</h4><p>Tiempos de atención definidos por acuerdos de nivel de servicio (SLA).</p></div>
+<div class="card"><div class="ico">3</div><h4>Seguridad primero</h4><p>Respaldos, control de accesos y buenas prácticas en cada proyecto.</p></div>
+</div></div></section>
+
+<section id="servicios" style="padding-bottom:40px"><div class="wrap">
+<h3 class="t">Nuestros servicios</h3>
+<p class="sub">Cinco líneas de trabajo que cubren todo el ciclo de tu tecnología. Toca una para ver el detalle.</p>
+<div class="grid">
+<a class="card" href="#s1"><div class="ico">1</div><h4>Ciberseguridad y gestión de riesgos</h4><p>Protege la información y los sistemas de tu empresa.</p></a>
+<a class="card" href="#s2"><div class="ico">2</div><h4>Infraestructura y operaciones de TI</h4><p>Redes, servidores y respaldo que funcionan siempre.</p></a>
+<a class="card" href="#s3"><div class="ico">3</div><h4>Soporte técnico empresarial</h4><p>Mantenimiento y atención en sitio o a distancia.</p></a>
+<a class="card" href="#s4"><div class="ico">4</div><h4>Presencia digital y comunicaciones</h4><p>Web, correo, redes y pauta para atraer clientes.</p></a>
+<a class="card" href="#s5"><div class="ico">5</div><h4>Diagnóstico integral de TI</h4><p>Chequeo completo y plan claro para mejorar.</p></a>
+</div></div></section>
+<section class="svc" id="s1"><div class="wrap"><span class="tag">Servicio 1 de 5 · Ciberseguridad</span><h3 class="t">Ciberseguridad y gestión de riesgos</h3><p class="lead">Es como las cerraduras, alarmas y cámaras de un edificio, pero para la información y los sistemas de la empresa: evita que alguien entre, robe o dañe lo que es valioso.</p>
+<div class="two"><div><h4>Qué hacemos</h4><ul><li><b>Hardening:</b> configurar equipos y servidores para cerrar puertas que no se necesitan</li><li><b>Pentesting y assessments:</b> ataques simulados y revisiones para medir qué tan segura está la empresa</li><li><b>Vulnerabilidades:</b> encontrar fallas conocidas, priorizarlas y corregirlas</li><li><b>Seguridad en la nube:</b> proteger el correo, los archivos y las aplicaciones en internet</li><li><b>Cumplimiento y riesgos:</b> ordenar políticas y requisitos legales según el riesgo real</li><li><b>Capacitación y desarrollo seguro:</b> formar al equipo y crear software sin fallas de fábrica</li></ul></div><div class="ben"><h4>Beneficios de implementarlo en su empresa</h4><div class="bn"><p><b>Menos pérdidas.</b> Evita fraudes, secuestro de datos y paradas costosas.</p><p><b>Reputación cuidada.</b> Protege la información de clientes y proveedores.</p><p><b>Sin sanciones.</b> Ayuda a cumplir la normativa vigente.</p><p><b>Personal alerta.</b> Los empleados reconocen correos y llamadas engañosas.</p></div></div></div></div></section>
+<section class="svc" id="s2"><div class="wrap"><span class="tag">Servicio 2 de 5 · Infraestructura</span><h3 class="t">Infraestructura y operaciones de TI</h3><p class="lead">Es la base sobre la que trabaja toda la empresa, como la electricidad y las tuberías de una oficina: redes, servidores y copias de respaldo que deben funcionar siempre.</p>
+<div class="two"><div><h4>Qué hacemos</h4><ul><li><b>Servidores y Active Directory:</b> organizar usuarios, permisos y servidores</li><li><b>Redes (switching y routing):</b> los equipos y rutas por donde viaja la información</li><li><b>Firewalls:</b> barrera que decide qué entra y qué sale de la red</li><li><b>Backup y continuidad:</b> copias automáticas y plan para volver a operar rápido</li><li><b>Virtualización y nube:</b> varios sistemas en un solo equipo o en servicios en línea</li><li><b>Planeación y optimización:</b> medir qué se usa y qué falta para crecer</li></ul></div><div class="ben"><h4>Beneficios de implementarlo en su empresa</h4><div class="bn"><p><b>Operación continua.</b> Menos caídas y menos horas perdidas.</p><p><b>Información recuperable.</b> Si hay un fallo, se restablece rápido.</p><p><b>Ahorro de costos.</b> Se paga por lo que realmente se necesita.</p><p><b>Listos para crecer.</b> La tecnología acompaña a la empresa.</p></div></div></div></div></section>
+<section class="svc" id="s3"><div class="wrap"><span class="tag">Servicio 3 de 5 · Soporte</span><h3 class="t">Soporte técnico empresarial</h3><p class="lead">Es el “equipo de mantenimiento” de la tecnología: resuelve los problemas diarios de computadores, programas, teléfonos y cámaras, en sitio o a distancia.</p>
+<div class="two"><div><h4>Qué hacemos</h4><ul><li><b>Preventivo y correctivo:</b> revisar antes de que falle y reparar cuando falla</li><li><b>Presencial o remoto:</b> un técnico en sitio o conectado a distancia</li><li><b>Endpoints y estaciones:</b> computadores y portátiles del personal</li><li><b>Software:</b> instalación y configuración de programas</li><li><b>Telefonía IP:</b> líneas telefónicas por internet, instaladas y atendidas</li><li><b>Cámaras y seguridad:</b> instalación y mantenimiento de sistemas de vigilancia</li></ul></div><div class="ben"><h4>Beneficios de implementarlo en su empresa</h4><div class="bn"><p><b>Respuesta rápida.</b> Los empleados dejan de perder tiempo con fallas.</p><p><b>Menos imprevistos.</b> El mantenimiento previene daños mayores.</p><p><b>Un solo aliado.</b> Un proveedor atiende todos los incidentes.</p><p><b>Costo predecible.</b> Servicio presencial o remoto, según convenga.</p></div></div></div></div></section>
+<section class="svc" id="s4"><div class="wrap"><span class="tag">Servicio 4 de 5 · Presencia digital</span><h3 class="t">Presencia digital y comunicaciones</h3><p class="lead">Es la cara de la empresa en internet: su página web, su correo corporativo y sus redes sociales, cuidados para atraer y atender mejor a los clientes.</p>
+<div class="two"><div><h4>Qué hacemos</h4><ul><li><b>Sitio web y correo:</b> administración, seguridad y mantenimiento</li><li><b>Community management:</b> responder y moderar las redes sociales de la marca</li><li><b>Contenido y redes:</b> publicaciones planeadas que comunican y atraen</li><li><b>Pautas digitales:</b> anuncios en internet dirigidos al público correcto</li><li><b>Desarrollo y mejora web:</b> páginas nuevas o renovadas que convierten visitas en clientes</li><li><b>Tendencias e IA:</b> aprovechar novedades y automatizar procesos con inteligencia artificial</li></ul></div><div class="ben"><h4>Beneficios de implementarlo en su empresa</h4><div class="bn"><p><b>Más clientes.</b> Una marca visible y confiable en internet.</p><p><b>Imagen profesional.</b> Web y correo propios generan confianza.</p><p><b>Tiempo liberado.</b> La automatización reduce tareas manuales.</p><p><b>Inversión medible.</b> Se ve qué pauta y contenido funcionan.</p></div></div></div></div></section>
+<section class="svc" id="s5"><div class="wrap"><span class="tag">Servicio 5 de 5 · Diagnóstico</span><h3 class="t">Diagnóstico integral de TI</h3><p class="lead">Es un chequeo médico completo de la tecnología de la empresa: se revisa todo, se detecta qué está mal o en riesgo y se entrega un plan claro para mejorar.</p>
+<div class="two"><div><h4>Qué hacemos</h4><ul><li><b>Evaluación completa:</b> revisión de toda la infraestructura tecnológica</li><li><b>Seguridad:</b> protecciones, accesos y configuraciones</li><li><b>Redes, servidores y endpoints:</b> estado, desempeño y vida útil</li><li><b>Riesgos y brechas:</b> puntos débiles y los que más afectan al negocio</li><li><b>Prioridades:</b> qué atender primero según impacto y costo</li><li><b>Hoja de ruta:</b> plan por etapas para optimizar, asegurar y dar continuidad</li></ul></div><div class="ben"><h4>Beneficios de implementarlo en su empresa</h4><div class="bn"><p><b>Panorama claro.</b> Se conoce el estado real de la tecnología.</p><p><b>Prioridades definidas.</b> Se invierte primero donde más importa.</p><p><b>Sin sorpresas.</b> Se anticipan fallas y riesgos.</p><p><b>Presupuesto ordenado.</b> Un plan por etapas, fácil de aprobar.</p></div></div></div></div></section>
+<section class="svc" id="modalidades"><div class="wrap">
+<span class="tag">Modalidades de servicio</span><h3 class="t">Una solución flexible para cada necesidad</h3>
+<p class="sub">Elige la forma de trabajo que mejor se ajusta a tu empresa.</p>
+<div class="grid">
+<div class="card"><h4>Proyectos</h4><p>Trabajo con alcance y entrega definidos.</p></div>
+<div class="card"><h4>Bolsa de horas</h4><p>Se compra un paquete de horas y se usa cuando se necesita.</p></div>
+<div class="card"><h4>Contrato freelance</h4><p>Un especialista dedicado a la medida.</p></div>
+<div class="card"><h4>Soporte presencial o remoto</h4><p>Atención en sitio o a distancia.</p></div>
+<div class="card"><h4>Diagnósticos</h4><p>Revisiones especializadas puntuales.</p></div>
+</div></div></section>
+<section class="contact" id="contacto"><div class="wrap">
+<h3 class="t">Contáctanos</h3>
+<p>Cuéntanos qué necesitas y te respondemos el mismo día.</p>
+<a class="btn alt" href="https://wa.me/573108260642" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+<p style="margin-top:22px"><b>Teléfonos:</b> <a href="tel:+573108260642">310 826 0642</a> · <a href="tel:+573114927443">311 492 7443</a></p>
+</div></section>
+
+<footer>© 2026 SSS S.A.S. (Secure System Support). Todos los derechos reservados. Bogotá, Colombia.</footer>
+<a class="wa" href="https://wa.me/573108260642" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+(function(){
+var s=document.querySelectorAll('.slide'),d=document.querySelector('.dots'),i=0,t;
+s.forEach(function(_,n){var b=document.createElement('button');b.setAttribute('aria-label','Slide '+(n+1));b.onclick=function(){go(n)};d.appendChild(b)});
+var bs=d.children;
+function go(n){i=n;s.forEach(function(e,k){e.classList.toggle('on',k===n);bs[k].classList.toggle('on',k===n)});clearInterval(t);t=setInterval(function(){go((i+1)%s.length)},6000)}
+go(0);
+})();
+</script>
+</body>
+</html>
